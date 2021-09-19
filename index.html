@@ -51,10 +51,12 @@
             <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
+                    <input id="ticket-count" class="inp-style inp-width" type="number" name="">
                 </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
+                <div  class="plus-minus-btn">
+                    <p> <span id="ticket-increase">+</span> 
+                        <span >-</span> 
+                    </p> 
                 </div>
             </div>
             
@@ -64,7 +66,9 @@
                     <input class="inp-style inp-width" type="number" name="">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
+                    <p> <span>+</span> 
+                        <span>-</span> 
+                    </p>
                 </div>
             </div>
             <div class="calculations">
@@ -104,7 +108,12 @@
         </div>
     </section>
         <script>
-            
+            document.getElementById('ticket-increase').addEventListener('click',function(){
+                const ticketInput = document.getElementById('ticket-count');
+                const ticketCount = parseInt(ticketInput.value);
+                const ticketNewCount = ticketCount +1 ;
+                ticketInput.value = ticketNewCount ; 
+            })
         </script>
   
 </body>
